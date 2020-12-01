@@ -14,6 +14,8 @@ function getRandomNumber(min, max) {
 
 var numeriCasuali = [];
 var risposteUtente = [];
+var numeriRicordati = [];
+
 
 for (var i = 0; i < 5; i++) {
     var numeroCasuale = getRandomNumber(1, 100);
@@ -23,23 +25,30 @@ console.log(numeriCasuali);
 
 
 //Dopo 30 secondi l’utente deve inserire, un prompt alla volta
+//un prompt alla volta, i numeri che ha visto precedentemente.
+
 
 $("button").click(function() {
 
-    
+    alert(numeriCasuali);
 
-    /* setTimeout(function () {
+    for (var i = 0; i < 5; i++) {
+        setTimeout(function () {
+            var rispostaUtente = Number(prompt("inserisci uno dei Numeri"));
+            risposteUtente.push(rispostaUtente);
+            console.log(risposteUtente);
+        }, 1000);
 
-        $("").azione("");
+    };
 
-    }, 3000); */
-    
+    //il software dice quanti e quali numeri sono stati ricordati.
      
-    setTimeout(function () {
-        alert(numeriCasuali)
-    }, 5000);
-    
+    for (var i = 0; i < 5; i++) {
+        if (risposteUtente[i] === numericasuali[i]) {
+            numeriRicordati.push(risposteUtente[i]);
+        };
+    };
     
 });
 
-/* var rispostaUtente = Number(prompt("inserisci il numero")); */
+console.log(numeriRicordati);
